@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../services/axios';
 
 function HomePage(props) {
 	console.log('HomePage props...', props)
@@ -13,7 +13,7 @@ function HomePage(props) {
 
 async function getInitialProps() {
 	console.log('HomePage.getInitialProps...')
-	var res = await axios.get('http://localhost:3000/api/projects');
+	var res = await axios.get('/api/projects');
 
 	return {
 		data: res.data
